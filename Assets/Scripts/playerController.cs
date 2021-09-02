@@ -14,6 +14,7 @@ public class playerController : MonoBehaviour
     private Quaternion defaultRotation;
     private bool shootable;
     private bool isRotating;
+    private bool rotateable;
     private float inputs;
     void Start()
     {
@@ -35,11 +36,33 @@ public class playerController : MonoBehaviour
         if(inputs > 0)
         {
             playerMesh.rotation = Quaternion.Euler(playerMesh.rotation.x, 60, playerMesh.rotation.z);
-            isRotating = true;
+            if (Vector3.Distance(this.transform.position, constarint[1].position) <= 1f)
+            {
+                rotateable = false;
+            }
+            else
+            {
+                rotateable = true;
+            }
+            if (rotateable)
+            {
+                isRotating = true;
+            }
         }else if(inputs < 0)
         {
             playerMesh.rotation = Quaternion.Euler(playerMesh.rotation.x, -5, playerMesh.rotation.z);
-            isRotating = true;
+            if (Vector3.Distance(this.transform.position, constarint[0].position) <= 1f)
+            {
+                rotateable = false;
+            }
+            else
+            {
+                rotateable = true;
+            }
+            if (rotateable)
+            {
+                isRotating = true;
+            }
         }
         else
         {
