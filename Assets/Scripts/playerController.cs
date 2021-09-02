@@ -10,10 +10,14 @@ public class playerController : MonoBehaviour
     [SerializeField] private Gun gun;
     [SerializeField] private float shootingRate;
     [SerializeField] private List<Transform> constarint;
+    [SerializeField] private Transform playerMesh;
+    private Quaternion defaultRotation;
     private bool shootable;
+    private bool isRotating;
     private float inputs;
     void Start()
     {
+        defaultRotation = playerMesh.rotation;
         shootable = true;
         controller = this.GetComponent<CharacterController>();
     }
@@ -28,6 +32,20 @@ public class playerController : MonoBehaviour
     private void Inputs()
     {
         inputs = Input.GetAxis("Horizontal");
+        if(inputs > 0)
+        {
+            playerMesh.rotation = Quaternion.Euler(playerMesh.rotation.x, 60, playerMesh.rotation.z);
+            isRotating = true;
+        }else if(inputs < 0)
+        {
+            playerMesh.rotation = Quaternion.Euler(playerMesh.rotation.x, -5, playerMesh.rotation.z);
+            isRotating = true;
+        }
+        else
+        {
+            playerMesh.rotation = defaultRotation;
+            isRotating = false;
+        }
         print(inputs);
     }
     private void PositionConstraint()
@@ -45,7 +63,7 @@ public class playerController : MonoBehaviour
     }
     private void Shoot()
     {
-        if (shootable)
+        if (shootable && !isRotating)
         {
             StartCoroutine(ShootBullet());
         }
