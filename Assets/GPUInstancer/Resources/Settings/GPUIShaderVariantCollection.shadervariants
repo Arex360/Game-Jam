@@ -8,6 +8,11 @@ ShaderVariantCollection:
   m_PrefabAsset: {fileID: 0}
   m_Name: GPUIShaderVariantCollection
   m_Shaders:
+  - first: {fileID: 4800000, guid: 648ec5ca38a68e24aadfb229752fd094, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
   - first: {fileID: 4800000, guid: d52a38c4e70daf4449eaab298ba27ce6, type: 3}
     second:
       variants: []
@@ -23,9 +28,4 @@ ShaderVariantCollection:
       - keywords: 
         passType: 0
       - keywords: _GLOSSINESS_FROM_BASE_ALPHA _SPECULAR_COLOR
-        passType: 0
-  - first: {fileID: 4800000, guid: 648ec5ca38a68e24aadfb229752fd094, type: 3}
-    second:
-      variants:
-      - keywords: 
         passType: 0
