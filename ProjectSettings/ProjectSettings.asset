@@ -597,6 +597,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
+    1: GPU_INSTANCER
     7: GPU_INSTANCER
   additionalCompilerArguments: {}
   platformArchitecture: {}
