@@ -79,7 +79,7 @@ public class playerController : MonoBehaviour
     }
     private void Movement()
     {
-        Vector3 direction = this.transform.forward * speed + this.transform.right * inputs * inputSensitity;
+        Vector3 direction = this.transform.forward * speed * Time.deltaTime + this.transform.right * inputs * inputSensitity * Time.deltaTime;
         print(direction);
         controller.Move(direction);
         this.PositionConstraint();
