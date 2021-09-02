@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833360db0d4926841a147a7340c9669d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.03
+  speed: 0.05
   inputSensitity: 0.01
   gun: {fileID: 938734983}
   shootingRate: 1.3
