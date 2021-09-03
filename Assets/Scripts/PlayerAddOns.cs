@@ -11,7 +11,7 @@ public class PlayerAddOns : MonoBehaviour
     [SerializeField] private float maxDamage = 100f;
     [SerializeField] private float currentDamage;
 
-    [SerializeField] private HealthBar playerHealth;
+    [SerializeField] public HealthBar playerHealth;
     [SerializeField] private DamageBar playerDamageBar;
 
     void Start()
